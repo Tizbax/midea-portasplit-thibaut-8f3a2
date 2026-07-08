@@ -1,0 +1,56 @@
+{
+  "interval_seconds": 3600,
+
+  "retailers": [
+    {
+      "name": "Amazon.fr",
+      "url": "https://www.amazon.fr/dp/B0CY2YW8BT",
+      "enabled": true
+    },
+    {
+      "name": "Leroy Merlin",
+      "url": "https://www.leroymerlin.fr/produits/climatiseur-split-mobile-reversible-portasplit-midea-par-optimea-93857579.html",
+      "enabled": true
+    },
+    {
+      "name": "Boulanger",
+      "url": "https://www.boulanger.com/c/climatiseur/brand~midea",
+      "enabled": true
+    },
+    {
+      "name": "Darty",
+      "url": "https://www.darty.com/nav/recherche/midea+portasplit.html",
+      "enabled": true
+    },
+    {
+      "name": "Optimea",
+      "url": "https://www.optimea.fr/",
+      "enabled": false
+    }
+  ],
+
+  "notifications": {
+    "ntfy": {
+      "enabled": true,
+      "server": "https://ntfy.sh",
+      "topic": "midea-portasplit-thibaut-8f3a2"
+    },
+    "free_mobile": {
+      "enabled": false,
+      "user": "TON_IDENTIFIANT_FREE",
+      "pass": "TA_CLE_API_FREE"
+    },
+    "twilio": {
+      "enabled": false,
+      "account_sid": "",
+      "auth_token": "",
+      "from": "+1XXXXXXXXXX",
+      "to": "+33677238015"
+    },
+    "telegram": {
+      "enabled": false,
+      "bot_token": "",
+      "chat_id": ""
+    }
+  }
+}
