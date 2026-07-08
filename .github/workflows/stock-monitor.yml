@@ -1,1 +1,40 @@
+name: Surveillance PortaSplit
 
+on:
+  schedule:
+    # Toutes les 15 minutes (heure UTC). GitHub peut retarder un peu selon la charge.
+    - cron: "*/15 * * * *"
+  workflow_dispatch:   # permet de lancer manuellement depuis l'onglet Actions
+
+permissions:
+  contents: write       # pour sauvegarder l'état entre deux exécutions
+
+concurrency:
+  group: portasplit-monitor
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer les fichiers
+        uses: actions/checkout@v4
+
+      - name: Installer Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Vérifier le stock
+        env:
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+        run: python midea_stock_monitor.py --once
+
+      - name: Sauvegarder l'état (évite les alertes en double)
+        run: |
+          git config user.name "portasplit-bot"
+          git config user.email "portasplit-bot@users.noreply.github.com"
+          git add state.json 2>/dev/null || true
+          git commit -m "maj etat $(date -u +%FT%TZ)" || echo "rien a committer"
+          git pull --rebase --autostash || true
+          git push || echo "push ignore"
