@@ -3,24 +3,24 @@
     "status": "unknown",
     "detail": "aucun signal reconnu (page à vérifier / rendu JavaScript ?)",
     "url": "https://www.amazon.fr/dp/B0CY2YW8BT",
-    "checked_at": "2026-07-18T12:36:32"
+    "checked_at": "2026-07-18T14:06:46"
   },
   "Leroy Merlin": {
     "status": "error",
     "detail": "HTTP Error 403: Forbidden",
     "url": "https://www.leroymerlin.fr/produits/climatiseur-split-mobile-reversible-portasplit-midea-par-optimea-93857579.html",
-    "checked_at": "2026-07-18T12:36:33"
+    "checked_at": "2026-07-18T14:06:46"
   },
   "Boulanger": {
     "status": "error",
     "detail": "The read operation timed out",
     "url": "https://www.boulanger.com/c/climatiseur/brand~midea",
-    "checked_at": "2026-07-18T12:36:58"
+    "checked_at": "2026-07-18T14:07:11"
   },
   "Darty": {
     "status": "error",
     "detail": "HTTP Error 403: Forbidden",
     "url": "https://www.darty.com/nav/recherche/midea+portasplit.html",
-    "checked_at": "2026-07-18T12:36:59"
+    "checked_at": "2026-07-18T14:07:12"
   }
 }
